@@ -2,7 +2,7 @@
 
 Repository for the storage of script to add weather information to properties on the National Trust website, challenge provided by Good Growth.
 
-![Product](Screenshots/solution.png)
+<img src="Screenshots/solution.png" width="700"/>
 
 ---
 
@@ -45,12 +45,48 @@ Go to any National Trust property page in Google Chrome such as:
 
 ## A/B Testing
 
+To perform A/B testing, I compared the expanded design I have posted at the top "A" with the minimalistic design below here "B".
+
+<img src="Screenshots/designB.png" width="700"/>
+
+Since this is only a mock challenge, I am unable to track the real statistics typically associated with this type of testing. In a real scenario, I would focus on metrics like the number of clicks on sections such as prices and opening times to gauge if users are continuing their journey, as well as booking statistics to see if there’s a significant increase in actual bookings. If I observed notable changes in these metrics, I would then repeat the test with an adjusted version of the less interacted-with solution to determine if there are additional aspects of design or functionality that could be transferred to the more successful version instead of fully discarding it.
+
+I created two sepeate Google Forms with the same questions for each design and then put out a request to my School of Code bootcamp along with some friends to let me know if they would be willing to submit a response, to which then I would send them 1 of these forms so that I can keep the amount of responses equal for both designs. While this is not ideal as they are not the primary audience that would be looking at these pages, that would be existing National Trust members, it still allows me to get some basic feedback on the overall success of the designs and find out which one stands out above the other within the time constraints on completing this tech test.
+
+The questions posed were:
+
+- Does the weather information provided give you a full understanding of the conditions at the location? | Yes/No
+- Do you think the placement of the weather feature on the page is appropriate? | Yes/No
+- On a scale of 1 to 5, how visually appealing do you find this design? | 1-5
+- On a scale of 1 to 5, how likely would this weather feature influence you to book a visit to the property? | 1-5
+- If you have any further comments or suggestions regarding the weather feature, please write them here. | Non-mandatory, Open Ended
+
+I managed to get 22 people to respond, giving me 11 results for each survey. The core results were:
+
+1A: 10 Yes / 1 No
+2A: 8 Yes / 3 No
+3A: 0 One / 1 Two / 2 Three / 5 Four / 3 Five
+4A: 1 One / 0 Two / 3 Three / 4 Four / 3 Five
+5A Summary: An overall professional design that fits with the webpage. More spacing between date and time would enhance readability. Adding day names for the 3-day forecast, a visual representation of wind speed, and some more icons would improve the overall design.
+
+1B: 3 Yes / 8 No
+2B: 6 Yes / 5 No
+3B: 3 One / 3 Two / 3 Three / 1 Four / 1 Five
+4B: 2 One / 3 Two / 5 Three / 1 Four / 0 Five
+5B Summary: The weather feature needs clearer visibility, better organization (e.g., morning/afternoon conditions), and live updates for changing conditions. Also, consider adding Fahrenheit and repositioning the weather for easier access.
+
+The feedback results suggest positive opinions on the A design and functionality of the weather feature, while design B was too simplistic and even difficult to pick out on the page for some users along with lacking actual data. The ideas I would be looking to take from this is the quality of life changes such as adding the day names to the different dates so users will know what day the weather refers to at a glance, as well as adding more icons in to help visualise what the conditions are. The positioning of the weather being just under the main title of the page also seems to be a good place to leave it as it was around there in both designs and received a favourable vote in the majority. Design A got overwhelmingly more positive votes on the visuals over design B, telling me that people want to see more instead of a minimalistic aesthetic. The most important information that I got from these surveys is that over 72% of the people feel that having this extra weather feature would positively influence them to actually make a booking to go visit the property after viewing the page.
+
 ## Challenges & Learnings
 
 - Used the same font family as the website do, however they have their own font included as the first option (NationalTrustTT) which I do not have access to due to their server side CORS policy.
-  ![Font Error](Screenshots/fontError.png)
+
+  <img src="Screenshots/fontError.png"/>
+
 - I found the mock data itself more difficult to work with than using an actual Weather API such as https://open-meteo.com/ or https://openweathermap.org/, due to not containing past weather data, and the randomness of the data as it changes each call and updates the time fields every hour, with the first available data always being 3 hours from current hour, then having intervals of 3 hours after eg. a call at 16:10 would show 19:00, 22:00, 01:00 etc. Using Postman helped me clarify that this was how the data worked and assisted in being able to work with it.
-  ![Postman](Screenshots/postman.png)
+
+  <img src="Screenshots/postman.png" width="700"/>
+
 - Re-discovering the Chrome Dev Tools has been a great learning experience as I have only briefly used them before during School of Code for light debugging and basic Dom manipulation. Learning things such as seeing an elements styling when clicking into it, my first introduction to Chrome Snippets, filtering inside of the network tab to help refine what you are searching for (Existing Fetch/XHR to see if there was anything I could pull) and the application tab to view the sites cookies and different types of storage.
 
 ## Future Improvements
